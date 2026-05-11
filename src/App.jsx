@@ -28,6 +28,8 @@ function App() {
         <Route path="/" element={authUser ? <ChatPage /> : <Navigate to={"/login"} />} />
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to={"/"} />} />
         <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to={"/"} />} />
+        <Route path="/forgot-password" element={!authUser ? <ForgotPasswordPage /> : <Navigate to={"/"} />} />
+        <Route path="/reset-password/:token" element={!authUser ? <ResetPasswordPage /> : <Navigate to={"/"} />} />
       </Routes>
 
       <Toaster />
